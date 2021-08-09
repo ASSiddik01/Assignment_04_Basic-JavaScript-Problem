@@ -75,7 +75,7 @@ function deliveryCost(tShirtquantity) {
     }
 
     // Negative input check
-    if (tShirtquantity < 0 ) {
+    if (tShirtquantity < 0) {
         return "Negative quantity is not acceptable";
     }
 
@@ -83,7 +83,7 @@ function deliveryCost(tShirtquantity) {
     if (tShirtquantity <= 100) {
         const firstStageDeliveryCost = firstStageDeliveryCharge * tShirtquantity;
         return firstStageDeliveryCost;
-    } 
+    }
 
     // Highest 200 quantity delivery cost calculation
     else if (tShirtquantity <= 200) {
@@ -92,8 +92,8 @@ function deliveryCost(tShirtquantity) {
         const secondStageDeliveryCost = secondStageDeliveryCharge * restQuantity;
         const totalCharge = firstStageDeliveryCost + secondStageDeliveryCost
         return totalCharge;
-    } 
-    
+    }
+
     // More than 200 quantity delivery cost calculation
     else {
         const firstStageDeliveryCost = firstStageDeliveryCharge * 100;
@@ -110,7 +110,22 @@ console.log(totalCost);
 
 
 /*=============================
-            Problem-03
+            Problem-04
 =============================*/
+
+
+function perfectFriend(names) {
+    for (const name of names) {
+        if(name.length == 5){
+            return name;
+        }
+    } 
+}
+
+
+var friendsName = ["shakib", "siddik", "salman", "sweet", "sunny"];
+
+var bestFriend = perfectFriend(friendsName);
+console.log(bestFriend);
 
 
