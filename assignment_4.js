@@ -20,6 +20,7 @@ console.log(result);
 
 
 
+
 /*=============================
             Problem-02
 =============================*/
@@ -49,7 +50,7 @@ function totalSales(shirtQuantity, pantQuantity, shoeQuantity) {
 }
 
 //Product quantity
-let shirt = 1;
+let shirt = 2;
 let pant = 3;
 let shoe = 2;
 
@@ -58,11 +59,12 @@ console.log(total);
 
 
 
+
 /*=============================
             Problem-03
 =============================*/
 
-function deliveryCost(tShirtquantity) {
+function deliveryCost(quantity) {
 
     // Differant stage delivery charge
     const firstStageDeliveryCharge = 100;
@@ -70,25 +72,25 @@ function deliveryCost(tShirtquantity) {
     const restStageDeliveryCharge = 50;
 
     // Input type check
-    if (typeof tShirtquantity != "number") {
-        return "Please! give quantity number";
+    if (typeof quantity != "number") {
+        return "Please! give product quantity number";
     }
 
     // Negative input check
-    if (tShirtquantity < 0) {
+    if (quantity < 0) {
         return "Negative quantity is not acceptable";
     }
 
     // Highest 100 quantity delivery cost calculation
-    if (tShirtquantity <= 100) {
-        const firstStageDeliveryCost = firstStageDeliveryCharge * tShirtquantity;
+    if (quantity <= 100) {
+        const firstStageDeliveryCost = firstStageDeliveryCharge * quantity;
         return firstStageDeliveryCost;
     }
 
     // Highest 200 quantity delivery cost calculation
-    else if (tShirtquantity <= 200) {
+    else if (quantity <= 200) {
         const firstStageDeliveryCost = firstStageDeliveryCharge * 100;
-        const restQuantity = tShirtquantity - 100;
+        const restQuantity = quantity - 100;
         const secondStageDeliveryCost = secondStageDeliveryCharge * restQuantity;
         const totalCharge = firstStageDeliveryCost + secondStageDeliveryCost
         return totalCharge;
@@ -98,7 +100,7 @@ function deliveryCost(tShirtquantity) {
     else {
         const firstStageDeliveryCost = firstStageDeliveryCharge * 100;
         const secondStageDeliveryCost = secondStageDeliveryCharge * 100;
-        const restQuantity = tShirtquantity - 200;
+        const restQuantity = quantity - 200;
         const restStageDeliveryCost = restStageDeliveryCharge * restQuantity;
         const totalCharge = firstStageDeliveryCost + secondStageDeliveryCost + restStageDeliveryCost;
         return totalCharge;
@@ -109,23 +111,34 @@ const totalCost = deliveryCost(230);
 console.log(totalCost);
 
 
+
+
 /*=============================
             Problem-04
 =============================*/
 
-
 function perfectFriend(names) {
+    // Input type check
     for (const name of names) {
-        if(name.length == 5){
+        if (typeof name != "string") {
+            return "Please! give a string array";
+        }
+    }
+
+    // Expected result calculate
+    for (const name of names) {
+        if (name.length == 5) {
             return name;
         }
-    } 
+    }
 }
 
 
-var friendsName = ["shakib", "siddik", "salman", "sweet", "sunny"];
+let friendsName = ["shakib", "siddik", "salman", "shama", "shawon" ,"sunny"];
 
-var bestFriend = perfectFriend(friendsName);
+const bestFriend = perfectFriend(friendsName);
 console.log(bestFriend);
+
+
 
 
