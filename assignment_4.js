@@ -1,4 +1,6 @@
-// Problem-01
+/*=============================
+            Problem-01
+=============================*/
 
 function seerToMon(seer) {
     // Input type check
@@ -16,7 +18,11 @@ function seerToMon(seer) {
 const result = seerToMon(800);
 console.log(result);
 
-// Problem-02
+
+
+/*=============================
+            Problem-02
+=============================*/
 
 function totalSales(shirtQuantity, pantQuantity, shoeQuantity) {
     // Input type check
@@ -51,5 +57,60 @@ const total = totalSales(shirt, pant, shoe);
 console.log(total);
 
 
+
+/*=============================
+            Problem-03
+=============================*/
+
+function deliveryCost(tShirtquantity) {
+
+    // Differant stage delivery charge
+    const firstStageDeliveryCharge = 100;
+    const secondStageDeliveryCharge = 80;
+    const restStageDeliveryCharge = 50;
+
+    // Input type check
+    if (typeof tShirtquantity != "number") {
+        return "Please! give quantity number";
+    }
+
+    // Negative input check
+    if (tShirtquantity < 0 ) {
+        return "Negative quantity is not acceptable";
+    }
+
+    // Highest 100 quantity delivery cost calculation
+    if (tShirtquantity <= 100) {
+        const firstStageDeliveryCost = firstStageDeliveryCharge * tShirtquantity;
+        return firstStageDeliveryCost;
+    } 
+
+    // Highest 200 quantity delivery cost calculation
+    else if (tShirtquantity <= 200) {
+        const firstStageDeliveryCost = firstStageDeliveryCharge * 100;
+        const restQuantity = tShirtquantity - 100;
+        const secondStageDeliveryCost = secondStageDeliveryCharge * restQuantity;
+        const totalCharge = firstStageDeliveryCost + secondStageDeliveryCost
+        return totalCharge;
+    } 
+    
+    // More than 200 quantity delivery cost calculation
+    else {
+        const firstStageDeliveryCost = firstStageDeliveryCharge * 100;
+        const secondStageDeliveryCost = secondStageDeliveryCharge * 100;
+        const restQuantity = tShirtquantity - 200;
+        const restStageDeliveryCost = restStageDeliveryCharge * restQuantity;
+        const totalCharge = firstStageDeliveryCost + secondStageDeliveryCost + restStageDeliveryCost;
+        return totalCharge;
+    }
+}
+
+const totalCost = deliveryCost(230);
+console.log(totalCost);
+
+
+/*=============================
+            Problem-03
+=============================*/
 
 
