@@ -42,5 +42,14 @@ function totalSales(shirtQuantity, pantQuantity, shoeQuantity) {
     return totalPrice
 }
 
-const total = totalSales(2, 0, "-5");
+//Product quantity
+let shirt = 1;
+let pant = 3;
+let shoe = 2;
+
+const total = totalSales(shirt, pant, shoe);
 console.log(total);
+
+
+
+
